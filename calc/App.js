@@ -8,21 +8,7 @@ export default function App() {
 
   function insert(num) {
     const e = display + num;
-    if(num != '/' && '*' && '+' && '-') {
-      setDisplay(e)
-    } else {
-      if(display.length != 0) {
-      if(display.substring(display.length, display.length -1) != '/') {
-        if(display.substring(display.length, display.length -1) != '*') {
-          if(display.substring(display.length, display.length -1) != '+') {
-            if(display.substring(display.length, display.length -1) != '-') {
-              setDisplay(e);
-            }
-          }
-        }
-      }
-    } 
-    }
+    setDisplay(e)
   }
   function calc() {
     if (display) {
@@ -87,7 +73,7 @@ export default function App() {
         <View style={styles.btn} onTouchEnd={() => insert('-')}>
           <Text  style={styles.text}>-</Text>
         </View>
-        <View style={styles.btn2} onTouchEnd={() => calc()} onTouchStart={() => styles.hover}>
+        <View style={styles.btn2} onTouchEnd={() => calc()}>
           <Text  style={styles.text}>=</Text>
         </View>
       </View>
